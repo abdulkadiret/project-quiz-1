@@ -5,7 +5,7 @@ const Question = ({ question, handleAnswerSelect, selectedAnswer = [] }) => {
   return (
     <fieldset>
       <Jumbotron>
-        <h2>{question.text}</h2>
+        <h4>{question.text}</h4>
         <Form.Group key={question._id}>
           {question.answers.map(answer => {
             return (
