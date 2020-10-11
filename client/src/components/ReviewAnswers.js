@@ -17,26 +17,37 @@ const getAnswersMark = (question, userAnswers, answer, selectedAnswers) => {
       return (
         <span
           style={{
-            fontSize: '45px',
+            fontSize: '2.5rem',
             color: '#383838',
             position: 'relative',
             background: 'none',
-            bottom: '-0.6rem',
+            bottom: '-0.5rem',
             left: '0.3rem',
           }}
         >
-          &#9745;
+          &#x2610;
+          <span
+            style={{
+              fontSize: '1.5rem',
+              color: '#383838',
+              position: 'absolute',
+              bottom: '0.1rem',
+              left: '0.4rem',
+            }}
+          >
+            &#x2713;
+          </span>
         </span>
       );
     } else {
       return (
         <span
           style={{
-            fontSize: '45px',
+            fontSize: '2.5rem',
             color: '#383838',
             position: 'relative',
             background: 'none',
-            bottom: '-0.6rem',
+            bottom: '-0.5rem',
             left: '0.3rem',
           }}
         >
@@ -48,11 +59,11 @@ const getAnswersMark = (question, userAnswers, answer, selectedAnswers) => {
     return (
       <span
         style={{
-          fontSize: '45px',
+          fontSize: '2.5rem',
           color: '#383838',
           position: 'relative',
           background: 'none',
-          bottom: '-0.6rem',
+          bottom: '-0.5rem',
           left: '0.3rem',
         }}
       >
@@ -63,10 +74,11 @@ const getAnswersMark = (question, userAnswers, answer, selectedAnswers) => {
     return (
       <span
         style={{
-          fontSize: '45px',
+          fontSize: '2.5rem',
           color: '#383838',
           position: 'relative',
-          bottom: '-0.3rem',
+          background: 'none',
+          bottom: '-0.5rem',
           left: '0.3rem',
         }}
       >
