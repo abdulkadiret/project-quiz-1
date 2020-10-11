@@ -128,10 +128,10 @@ const ReviewAnswers = ({
               </Card.Body>
             </Card>
           ))}
-          <Button className="mb-4" variant="primary" href={quizName}>
-            Try again
-          </Button>
         </fieldset>
+        <Button className="mb-4" variant="primary" href={quizName}>
+          Try again
+        </Button>
       </Form>
     </Container>
   );
