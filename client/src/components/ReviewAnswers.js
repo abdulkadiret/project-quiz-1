@@ -17,11 +17,11 @@ const getAnswersMark = (question, userAnswers, answer, selectedAnswers) => {
       return (
         <span
           style={{
-            fontSize: '30px',
-            marginRight: '10px',
-            color: '#000000',
+            fontSize: '45px',
+            color: '#383838',
             position: 'relative',
-            bottom: '-0.3rem',
+            background: 'none',
+            bottom: '-0.6rem',
             left: '0.3rem',
           }}
         >
@@ -32,11 +32,11 @@ const getAnswersMark = (question, userAnswers, answer, selectedAnswers) => {
       return (
         <span
           style={{
-            fontSize: '30px',
-            marginRight: '10px',
-            color: '#000000',
+            fontSize: '45px',
+            color: '#383838',
             position: 'relative',
-            bottom: '-0.3rem',
+            background: 'none',
+            bottom: '-0.6rem',
             left: '0.3rem',
           }}
         >
@@ -48,11 +48,11 @@ const getAnswersMark = (question, userAnswers, answer, selectedAnswers) => {
     return (
       <span
         style={{
-          fontSize: '30px',
-          marginRight: '10px',
-          color: '#000000',
+          fontSize: '45px',
+          color: '#383838',
           position: 'relative',
-          bottom: '-0.3rem',
+          background: 'none',
+          bottom: '-0.6rem',
           left: '0.3rem',
         }}
       >
@@ -63,8 +63,8 @@ const getAnswersMark = (question, userAnswers, answer, selectedAnswers) => {
     return (
       <span
         style={{
-          fontSize: '30px',
-          marginRight: '10px',
+          fontSize: '45px',
+          color: '#383838',
           position: 'relative',
           bottom: '-0.3rem',
           left: '0.3rem',
@@ -94,8 +94,8 @@ const ReviewAnswers = ({
             <Card key={question._id} className="mb-4">
               <Card.Header as="h5">{question.text}</Card.Header>
               <Card.Body className="bg-white">
-                <Form.Group className="bg-light px-1" key={question._id}>
-                  <ul className="px-3 list-unstyled">
+                <Form.Group className="bg-light" key={question._id}>
+                  <ul className="list-unstyled">
                     {question.answers.map(answer => {
                       const selectedAnswers = userAnswers[question._id];
                       return (
@@ -117,7 +117,9 @@ const ReviewAnswers = ({
                             answer,
                             selectedAnswers,
                           )}
-                          <label>{answer.text}</label>
+                          <label className="review-answers px-2">
+                            {answer.text}
+                          </label>
                         </li>
                       );
                     })}
