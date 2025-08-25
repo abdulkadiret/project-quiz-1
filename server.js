@@ -7,10 +7,16 @@ const quizRoutes = require('./routes/quizzes');
 const path = require('path');
 const PORT = process.env.PORT || 5000;
 
-mongoose.connect(process.env.MONGODB_URI || process.env.DATABASE_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose
+  .connect(process.env.MONGODB_URI || process.env.DATABASE_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => {
+    console.error('MongoDB connection error:', err);
+    process.exit(1); // Exit if DB is not connected
+  });
 
 const db = mongoose.connection;
 db.once('connected', () => console.log('MongoDB connected'));
