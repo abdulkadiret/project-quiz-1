@@ -1,17 +1,17 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let QuizSchema = new Schema({
-  name: { type: String, required: true },
-  text: { type: String, required: true },
-  qType: { type: String, required: true },
-  answers: [
-    {
-      _id: { type: Number, required: true },
-      text: { type: String, required: true },
-      isCorrect: { type: Boolean, required: true },
-    },
-  ],
+const AnswerSchema = new Schema({
+  optionId: { type: Number, required: true }, // local to the question
+  optionText: { type: String, required: true },
+  isCorrect: { type: Boolean, required: true },
+});
+
+const QuizSchema = new Schema({
+  category: { type: String, required: true },
+  questionText: { type: String, required: true },
+  questionType: { type: String, required: true }, // "radio" or "checkbox"
+  options: [AnswerSchema],
 });
 
 const Quiz = mongoose.model('Quiz', QuizSchema);

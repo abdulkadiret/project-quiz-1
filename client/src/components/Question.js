@@ -1,44 +1,44 @@
 import React from 'react';
 import { Form, Card } from 'react-bootstrap';
 
-const Question = ({ question, handleAnswerSelect, selectedAnswer = [] }) => {
-  const addClassName = question => {
-    if (question.qType === 'checkbox') {
-      return 'styled-input-square';
-    } else {
-      return 'styled-input-rounded';
-    }
-  };
+const Question = ({
+  question,
+  index = 0,
+  handleAnswerSelect,
+  selectedAnswer = [],
+}) => {
+  const addClassName = question =>
+    question.questionType === 'checkbox'
+      ? 'styled-input-square'
+      : 'styled-input-rounded';
 
   return (
     <fieldset>
       <Card className="mb-3 rounded">
         <Card.Header className="bg-secondary text-white" as="h5">
-          {question.text}
+          {index + 1}. {question.questionText}
         </Card.Header>
         <Card.Body className="bg-white">
           <Form.Group className="bg-light px-1" key={question._id}>
-            {question.answers.map(answer => {
-              return (
-                <div
-                  style={{
-                    borderBottom: '1px solid white',
-                  }}
-                >
-                  <Form.Check
-                    key={answer._id}
-                    type={question.qType}
-                    className={addClassName(question)}
-                    id={`${question._id}.${answer._id}`}
-                    name={question._id}
-                    value={answer._id}
-                    onChange={e => handleAnswerSelect(e, question.qType)}
-                    label={`${answer.text}`}
-                    defaultChecked={selectedAnswer.includes(answer._id)}
-                  />
-                </div>
-              );
-            })}
+            {question.options.map(option => (
+              <div
+                key={option.optionId}
+                style={{
+                  borderBottom: '1px solid white',
+                }}
+              >
+                <Form.Check
+                  type={question.questionType}
+                  className={addClassName(question)}
+                  id={`${question._id}.${option.optionId}`}
+                  name={question._id}
+                  value={option.optionId}
+                  onChange={e => handleAnswerSelect(e, question.questionType)}
+                  label={option.optionText}
+                  defaultChecked={selectedAnswer.includes(option.optionId)}
+                />
+              </div>
+            ))}
             <span className="checkmark"></span>
           </Form.Group>
         </Card.Body>

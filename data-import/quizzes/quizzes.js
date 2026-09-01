@@ -1,688 +1,691 @@
 module.exports = [
   {
-    name: 'html',
-    text: 'What does HTML stand for?',
-    qType: 'radio',
-    answers: [
+    category: 'html',
+    questionText: 'What does HTML stand for?',
+    questionType: 'radio',
+    options: [
       {
-        _id: 1,
-        text: 'Hyper text markup language',
+        optionId: 1,
+        optionText: 'Hyper text markup language',
         isCorrect: true,
       },
       {
-        _id: 2,
-        text: 'Home tool markup language',
+        optionId: 2,
+        optionText: 'Home tool markup language',
         isCorrect: false,
       },
       {
-        _id: 3,
-        text: 'Hyperlinks text markup language',
+        optionId: 3,
+        optionText: 'Hyperlinks text markup language',
         isCorrect: false,
       },
       {
-        _id: 4,
-        text: 'Hyperlinks text language',
+        optionId: 4,
+        optionText: 'Hyperlinks text language',
         isCorrect: false,
       },
     ],
   },
   {
-    name: 'html',
-    text: 'Choose the correct HTML element for the largest heading:',
-    qType: 'radio',
-    answers: [
+    category: 'html',
+    questionText: 'Choose the correct HTML element for the largest heading:',
+    questionType: 'radio',
+    options: [
       {
-        _id: 1,
-        text: 'heading',
+        optionId: 1,
+        optionText: 'heading',
         isCorrect: false,
       },
       {
-        _id: 2,
-        text: 'h1',
+        optionId: 2,
+        optionText: 'h1',
         isCorrect: true,
       },
       {
-        _id: 3,
-        text: 'head',
+        optionId: 3,
+        optionText: 'head',
         isCorrect: false,
       },
       {
-        _id: 4,
-        text: 'h6',
+        optionId: 4,
+        optionText: 'h6',
         isCorrect: false,
       },
     ],
   },
   {
-    name: 'html',
-    text: 'What is the correct HTML element for inserting a line break?',
-    qType: 'radio',
-    answers: [
+    category: 'html',
+    questionText:
+      'What is the correct HTML element for inserting a line break?',
+    questionType: 'radio',
+    options: [
       {
-        _id: 1,
-        text: 'break',
+        optionId: 1,
+        optionText: 'break',
         isCorrect: false,
       },
       {
-        _id: 2,
-        text: 'br',
+        optionId: 2,
+        optionText: 'br',
         isCorrect: true,
       },
       {
-        _id: 3,
-        text: 'hr',
+        optionId: 3,
+        optionText: 'hr',
         isCorrect: false,
       },
       {
-        _id: 4,
-        text: 'ir',
+        optionId: 4,
+        optionText: 'ir',
         isCorrect: false,
       },
     ],
   },
   {
-    name: 'html',
-    text: 'What is the correct HTML for adding a background color?',
-    qType: 'radio',
-    answers: [
+    category: 'html',
+    questionText: 'What is the correct HTML for adding a background color?',
+    questionType: 'radio',
+    options: [
       {
-        _id: 1,
-        text: '<background>yellow</background>',
+        optionId: 1,
+        optionText: '<background>yellow</background>',
         isCorrect: false,
       },
       {
-        _id: 2,
-        text: "<body style='background-color:yellow';>",
+        optionId: 2,
+        optionText: "<body style='background-color:yellow';>",
         isCorrect: true,
       },
       {
-        _id: 3,
-        text: "<body style='color:yellow';>",
+        optionId: 3,
+        optionText: "<body style='color:yellow';>",
         isCorrect: false,
       },
       {
-        _id: 4,
-        text: "<body by='yellow'>",
+        optionId: 4,
+        optionText: "<body by='yellow'>",
         isCorrect: false,
       },
     ],
   },
   {
-    name: 'html',
-    text: 'What is the correct HTML for creating a hyperlink?',
-    qType: 'radio',
-    answers: [
+    category: 'html',
+    questionText: 'What is the correct HTML for creating a hyperlink?',
+    questionType: 'radio',
+    options: [
       {
-        _id: 1,
-        text: "<a name='http://www.w3school.com'>W3School.com</a>",
+        optionId: 1,
+        optionText: "<a name='http://www.w3school.com'>W3School.com</a>",
         isCorrect: false,
       },
       {
-        _id: 2,
-        text: "<a href='http://www.w3school.com'>W3School.com</a>",
+        optionId: 2,
+        optionText: "<a href='http://www.w3school.com'>W3School.com</a>",
         isCorrect: true,
       },
       {
-        _id: 3,
-        text: "<a src='http://www.w3school.com'>W3School.com</a>",
+        optionId: 3,
+        optionText: "<a src='http://www.w3school.com'>W3School.com</a>",
         isCorrect: false,
       },
       {
-        _id: 4,
-        text: "<a url='http://www.w3school.com'>W3School.com</a>",
-        isCorrect: false,
-      },
-    ],
-  },
-
-  {
-    name: 'css',
-    text: 'What is the correct HTML for referring to an external style sheet?',
-    qType: 'radio',
-    answers: [
-      {
-        _id: 1,
-        text: "<link rel='stylesheet' type='text/css' href='mystyle.css'>",
-        isCorrect: true,
-      },
-      {
-        _id: 2,
-        text: '<stylesheet>mystyle.css</stylesheet>',
-        isCorrect: false,
-      },
-      {
-        _id: 3,
-        text: "<style src='mystyle.css'>",
-        isCorrect: false,
-      },
-      {
-        _id: 4,
-        text: "<style name='mystyle.css'>",
+        optionId: 4,
+        optionText: "<a url='http://www.w3school.com'>W3School.com</a>",
         isCorrect: false,
       },
     ],
   },
 
   {
-    name: 'css',
-    text: 'Which HTML tag is used to define an internal style sheet?',
-    qType: 'radio',
-    answers: [
+    category: 'css',
+    questionText:
+      'What is the correct HTML for referring to an external style sheet?',
+    questionType: 'radio',
+    options: [
       {
-        _id: 1,
-        text: 'class',
-        isCorrect: false,
-      },
-      {
-        _id: 2,
-        text: '<css>',
-        isCorrect: false,
-      },
-      {
-        _id: 3,
-        text: '<style>',
+        optionId: 1,
+        optionText:
+          "<link rel='stylesheet' type='text/css' href='mystyle.css'>",
         isCorrect: true,
       },
       {
-        _id: 4,
-        text: '<script>',
+        optionId: 2,
+        optionText: '<stylesheet>mystyle.css</stylesheet>',
+        isCorrect: false,
+      },
+      {
+        optionId: 3,
+        optionText: "<style src='mystyle.css'>",
+        isCorrect: false,
+      },
+      {
+        optionId: 4,
+        optionText: "<style name='mystyle.css'>",
         isCorrect: false,
       },
     ],
   },
 
   {
-    name: 'css',
-    text: 'How do you change the text color of an element?',
-    qType: 'radio',
-    answers: [
+    category: 'css',
+    questionText: 'Which HTML tag is used to define an internal style sheet?',
+    questionType: 'radio',
+    options: [
       {
-        _id: 1,
-        text: 'text-color:',
+        optionId: 1,
+        optionText: 'class',
         isCorrect: false,
       },
       {
-        _id: 2,
-        text: 'background-color',
+        optionId: 2,
+        optionText: '<css>',
         isCorrect: false,
       },
       {
-        _id: 3,
-        text: 'color',
+        optionId: 3,
+        optionText: '<style>',
         isCorrect: true,
       },
       {
-        _id: 4,
-        text: 'font-color',
+        optionId: 4,
+        optionText: '<script>',
+        isCorrect: false,
+      },
+    ],
+  },
+
+  {
+    category: 'css',
+    questionText: 'How do you change the text color of an element?',
+    questionType: 'radio',
+    options: [
+      {
+        optionId: 1,
+        optionText: 'text-color:',
+        isCorrect: false,
+      },
+      {
+        optionId: 2,
+        optionText: 'background-color',
+        isCorrect: false,
+      },
+      {
+        optionId: 3,
+        optionText: 'color',
+        isCorrect: true,
+      },
+      {
+        optionId: 4,
+        optionText: 'font-color',
         isCorrect: false,
       },
     ],
   },
   {
-    name: 'css',
-    text: 'Which is the correct CSS syntax?',
-    qType: 'radio',
-    answers: [
+    category: 'css',
+    questionText: 'Which is the correct CSS syntax?',
+    questionType: 'radio',
+    options: [
       {
-        _id: 1,
-        text: '{body;color:black;}',
+        optionId: 1,
+        optionText: '{body;color:black;}',
         isCorrect: false,
       },
       {
-        _id: 2,
-        text: 'body:color=black;',
+        optionId: 2,
+        optionText: 'body:color=black;',
         isCorrect: false,
       },
       {
-        _id: 3,
-        text: '{body:color=black;}',
+        optionId: 3,
+        optionText: '{body:color=black;}',
         isCorrect: false,
       },
       {
-        _id: 4,
-        text: 'body {color:black;}',
+        optionId: 4,
+        optionText: 'body {color:black;}',
         isCorrect: true,
       },
     ],
   },
   {
-    name: 'css',
-    text: 'How do you insert a comment in a CSS file?',
-    qType: 'checkbox',
-    answers: [
+    category: 'css',
+    questionText: 'How do you insert a comment in a CSS file?',
+    questionType: 'checkbox',
+    options: [
       {
-        _id: 1,
-        text: '/* this is a comment */',
+        optionId: 1,
+        optionText: '/* this is a comment */',
         isCorrect: true,
       },
       {
-        _id: 2,
-        text: '// this is a comment',
+        optionId: 2,
+        optionText: '// this is a comment',
         isCorrect: false,
       },
       {
-        _id: 3,
-        text: '// this is a comment //',
+        optionId: 3,
+        optionText: '// this is a comment //',
         isCorrect: false,
       },
       {
-        _id: 4,
-        text: '<!-- this is a comment -->',
+        optionId: 4,
+        optionText: '<!-- this is a comment -->',
         isCorrect: true,
       },
     ],
   },
   {
-    name: 'js',
-    text: 'Inside which HTML element do we put the JavaScript??',
-    qType: 'radio',
-    answers: [
+    category: 'js',
+    questionText: 'Inside which HTML element do we put the JavaScript??',
+    questionType: 'radio',
+    options: [
       {
-        _id: 1,
-        text: '<script>',
+        optionId: 1,
+        optionText: '<script>',
         isCorrect: true,
       },
       {
-        _id: 2,
-        text: '<scripting>',
+        optionId: 2,
+        optionText: '<scripting>',
         isCorrect: false,
       },
       {
-        _id: 3,
-        text: '<style>',
+        optionId: 3,
+        optionText: '<style>',
         isCorrect: false,
       },
       {
-        _id: 4,
-        text: '<js>',
+        optionId: 4,
+        optionText: '<js>',
         isCorrect: false,
       },
     ],
   },
   {
-    name: 'js',
-    text:
+    category: 'js',
+    questionText:
       "What is the correct JavaScript syntax to change the content of the HTML element below? <p id='demo'>This is a demonstration.</p>",
-    qType: 'radio',
-    answers: [
+    questionType: 'radio',
+    options: [
       {
-        _id: 1,
-        text: "document.getElementById('demo').innerHTML='Hello World!;",
+        optionId: 1,
+        optionText: "document.getElementById('demo').innerHTML='Hello World!;",
         isCorrect: true,
       },
       {
-        _id: 2,
-        text: "document.getElement('p').innerHTML='Hello World!;",
+        optionId: 2,
+        optionText: "document.getElement('p').innerHTML='Hello World!;",
         isCorrect: false,
       },
       {
-        _id: 3,
-        text: "document.getElementByName('p').innerHTML='Hello World!;",
+        optionId: 3,
+        optionText: "document.getElementByName('p').innerHTML='Hello World!;",
         isCorrect: false,
       },
       {
-        _id: 4,
-        text: "demo.innerHTML='Hello World!;",
+        optionId: 4,
+        optionText: "demo.innerHTML='Hello World!;",
         isCorrect: false,
       },
     ],
   },
   {
-    name: 'js',
-    text:
+    category: 'js',
+    questionText:
       ' Which of the following function of Array object creates a new array with all of the elements of this array for which the provided filtering function returns true?',
-    qType: 'radio',
-    answers: [
+    questionType: 'radio',
+    options: [
       {
-        _id: 1,
-        text: 'concat()',
+        optionId: 1,
+        optionText: 'concat()',
         isCorrect: false,
       },
       {
-        _id: 2,
-        text: 'every()',
+        optionId: 2,
+        optionText: 'every()',
         isCorrect: false,
       },
       {
-        _id: 3,
-        text: 'some()',
+        optionId: 3,
+        optionText: 'some()',
         isCorrect: false,
       },
       {
-        _id: 4,
-        text: 'filter()',
+        optionId: 4,
+        optionText: 'filter()',
         isCorrect: true,
       },
     ],
   },
   {
-    name: 'js',
-    text:
+    category: 'js',
+    questionText:
       "What is the correct syntax for referring to an external script called 'xxx.js'?",
-    qType: 'radio',
-    answers: [
+    questionType: 'radio',
+    options: [
       {
-        _id: 1,
-        text: "<script name='xxx.js'>",
+        optionId: 1,
+        optionText: "<script name='xxx.js'>",
         isCorrect: false,
       },
       {
-        _id: 2,
-        text: "<script src='xxx.js'>",
+        optionId: 2,
+        optionText: "<script src='xxx.js'>",
         isCorrect: true,
       },
       {
-        _id: 3,
-        text: "<script href='xxx.js'>",
+        optionId: 3,
+        optionText: "<script href='xxx.js'>",
         isCorrect: false,
       },
       {
-        _id: 4,
-        text: "<script url='xxx.js'>",
+        optionId: 4,
+        optionText: "<script url='xxx.js'>",
         isCorrect: false,
       },
     ],
   },
   {
-    name: 'js',
-    text: 'How do you create a function in JavaScript?',
-    qType: 'radio',
-    answers: [
+    category: 'js',
+    questionText: 'How do you create a function in JavaScript?',
+    questionType: 'radio',
+    options: [
       {
-        _id: 1,
-        text: 'function = myFunction()',
+        optionId: 1,
+        optionText: 'function = myFunction()',
         isCorrect: false,
       },
       {
-        _id: 2,
-        text: 'function myFunction()',
+        optionId: 2,
+        optionText: 'function myFunction()',
         isCorrect: true,
       },
       {
-        _id: 3,
-        text: 'function:myFunction()',
+        optionId: 3,
+        optionText: 'function:myFunction()',
         isCorrect: false,
       },
       {
-        _id: 4,
-        text: 'function myFunction =()',
+        optionId: 4,
+        optionText: 'function myFunction =()',
         isCorrect: false,
       },
     ],
   },
   {
-    name: 'node',
-    text: 'What npm stands for?',
-    qType: 'radio',
-    answers: [
+    category: 'node',
+    questionText: 'What npm stands for?',
+    questionType: 'radio',
+    options: [
       {
-        _id: 1,
-        text: 'Node Package Manager',
+        optionId: 1,
+        optionText: 'Node Package Manager',
         isCorrect: true,
       },
       {
-        _id: 2,
-        text: 'Node Project Manager',
+        optionId: 2,
+        optionText: 'Node Project Manager',
         isCorrect: false,
       },
       {
-        _id: 3,
-        text: 'New Project Manager',
+        optionId: 3,
+        optionText: 'New Project Manager',
         isCorrect: false,
       },
       {
-        _id: 4,
-        text: 'New Package Manager',
+        optionId: 4,
+        optionText: 'New Package Manager',
         isCorrect: false,
       },
     ],
   },
   {
-    name: 'node',
-    text: 'Node.js runs on __________',
-    qType: 'radio',
-    answers: [
+    category: 'node',
+    questionText: 'Node.js runs on __________',
+    questionType: 'radio',
+    options: [
       {
-        _id: 1,
-        text: 'Client',
+        optionId: 1,
+        optionText: 'Client',
         isCorrect: false,
       },
       {
-        _id: 2,
-        text: 'Server',
+        optionId: 2,
+        optionText: 'Server',
         isCorrect: true,
       },
       {
-        _id: 3,
-        text: 'Both, server and client',
+        optionId: 3,
+        optionText: 'Both, server and client',
         isCorrect: false,
       },
       {
-        _id: 4,
-        text: 'None of the above',
-        isCorrect: false,
-      },
-    ],
-  },
-
-  {
-    name: 'node',
-    text: 'Node.js is ________ by default.',
-    qType: 'radio',
-    answers: [
-      {
-        _id: 1,
-        text: 'Synchronous',
-        isCorrect: false,
-      },
-      {
-        _id: 2,
-        text: 'Multi-threaded',
-        isCorrect: false,
-      },
-      {
-        _id: 3,
-        text: 'Asynchronous',
-        isCorrect: true,
-      },
-      {
-        _id: 4,
-        text: 'None of the above',
+        optionId: 4,
+        optionText: 'None of the above',
         isCorrect: false,
       },
     ],
   },
 
   {
-    name: 'node',
-    text:
+    category: 'node',
+    questionText: 'Node.js is ________ by default.',
+    questionType: 'radio',
+    options: [
+      {
+        optionId: 1,
+        optionText: 'Synchronous',
+        isCorrect: false,
+      },
+      {
+        optionId: 2,
+        optionText: 'Multi-threaded',
+        isCorrect: false,
+      },
+      {
+        optionId: 3,
+        optionText: 'Asynchronous',
+        isCorrect: true,
+      },
+      {
+        optionId: 4,
+        optionText: 'None of the above',
+        isCorrect: false,
+      },
+    ],
+  },
+
+  {
+    category: 'node',
+    questionText:
       'Which of the following core module is used to create a web server in Node.js?',
-    qType: 'radio',
-    answers: [
+    questionType: 'radio',
+    options: [
       {
-        _id: 1,
-        text: 'fs',
+        optionId: 1,
+        optionText: 'fs',
         isCorrect: false,
       },
       {
-        _id: 2,
-        text: 'url',
+        optionId: 2,
+        optionText: 'url',
         isCorrect: false,
       },
       {
-        _id: 3,
-        text: 'connect',
+        optionId: 3,
+        optionText: 'connect',
         isCorrect: false,
       },
       {
-        _id: 4,
-        text: 'http',
+        optionId: 4,
+        optionText: 'http',
         isCorrect: true,
       },
     ],
   },
 
   {
-    name: 'node',
-    text: 'How to import module in Node.js?',
-    qType: 'radio',
-    answers: [
+    category: 'node',
+    questionText: 'How to import module in Node.js?',
+    questionType: 'radio',
+    options: [
       {
-        _id: 1,
-        text: 'Using require() function.',
+        optionId: 1,
+        optionText: 'Using require() function.',
         isCorrect: true,
       },
       {
-        _id: 2,
-        text: 'Using module.import',
+        optionId: 2,
+        optionText: 'Using module.import',
         isCorrect: false,
       },
       {
-        _id: 3,
-        text: 'Using include() function',
+        optionId: 3,
+        optionText: 'Using include() function',
         isCorrect: false,
       },
       {
-        _id: 4,
-        text: 'Using app.use() function',
+        optionId: 4,
+        optionText: 'Using app.use() function',
         isCorrect: false,
       },
     ],
   },
 
   {
-    name: 'react',
-    text: 'Which of the following is true when you call setState()?',
-    qType: 'radio',
-    answers: [
+    category: 'react',
+    questionText: 'Which of the following is true when you call setState()?',
+    questionType: 'radio',
+    options: [
       {
-        _id: 1,
-        text: 'Reloads the component',
+        optionId: 1,
+        optionText: 'Reloads the component',
         isCorrect: false,
       },
       {
-        _id: 2,
-        text: 'Executes asynchronously',
+        optionId: 2,
+        optionText: 'Executes asynchronously',
         isCorrect: true,
       },
       {
-        _id: 3,
-        text: 'Updates data alone',
+        optionId: 3,
+        optionText: 'Updates data alone',
         isCorrect: false,
       },
       {
-        _id: 4,
-        text: 'Updates the Real DOM',
+        optionId: 4,
+        optionText: 'Updates the Real DOM',
         isCorrect: false,
       },
     ],
   },
   {
-    name: 'react',
-    text: 'what Is used to pass data to a component from outside?',
-    qType: 'radio',
-    answers: [
+    category: 'react',
+    questionText: 'what Is used to pass data to a component from outside?',
+    questionType: 'radio',
+    options: [
       {
-        _id: 1,
-        text: 'setState',
+        optionId: 1,
+        optionText: 'setState',
         isCorrect: false,
       },
       {
-        _id: 2,
-        text: 'state',
+        optionId: 2,
+        optionText: 'state',
         isCorrect: false,
       },
       {
-        _id: 3,
-        text: 'propTypes',
+        optionId: 3,
+        optionText: 'propTypes',
         isCorrect: false,
       },
       {
-        _id: 4,
-        text: 'props',
+        optionId: 4,
+        optionText: 'props',
         isCorrect: true,
       },
     ],
   },
   {
-    name: 'react',
-    text: 'What is the attribute used to declare a CSS class in a JSX?',
-    qType: 'radio',
-    answers: [
+    category: 'react',
+    questionText: 'What is the attribute used to declare a CSS class in a JSX?',
+    questionType: 'radio',
+    options: [
       {
-        _id: 1,
-        text: 'classname',
+        optionId: 1,
+        optionText: 'classname',
         isCorrect: false,
       },
       {
-        _id: 2,
-        text: 'class',
+        optionId: 2,
+        optionText: 'class',
         isCorrect: false,
       },
       {
-        _id: 3,
-        text: 'className',
+        optionId: 3,
+        optionText: 'className',
         isCorrect: true,
       },
       {
-        _id: 4,
-        text: 'cssClass',
+        optionId: 4,
+        optionText: 'cssClass',
         isCorrect: false,
       },
     ],
   },
   {
-    name: 'react',
-    text:
+    category: 'react',
+    questionText:
       'How do you write an inline style specifying the font-size:12px and color:red; in JSX?',
-    qType: 'radio',
-    answers: [
+    questionType: 'radio',
+    options: [
       {
-        _id: 1,
-        text: "style={{font-size:12,color:'red'}}",
+        optionId: 1,
+        optionText: "style={{font-size:12,color:'red'}}",
         isCorrect: false,
       },
       {
-        _id: 2,
-        text: "style={{fontSize:'12px',color:'red'}}",
+        optionId: 2,
+        optionText: "style={{fontSize:'12px',color:'red'}}",
         isCorrect: true,
       },
       {
-        _id: 3,
-        text: "style={fontSize:'12px',color:'red'}",
+        optionId: 3,
+        optionText: "style={fontSize:'12px',color:'red'}",
         isCorrect: false,
       },
       {
-        _id: 4,
-        text: "style={{font-size:12px,color:'red'}}",
+        optionId: 4,
+        optionText: "style={{font-size:12px,color:'red'}}",
         isCorrect: false,
       },
     ],
   },
   {
-    name: 'react',
-    text:
+    category: 'react',
+    questionText:
       'Which of the following is correct syntax for a button click event handler, foo?',
-    qType: 'radio',
-    answers: [
+    questionType: 'radio',
+    options: [
       {
-        _id: 1,
-        text: '<button onclick={this.foo()}>',
+        optionId: 1,
+        optionText: '<button onclick={this.foo()}>',
         isCorrect: false,
       },
       {
-        _id: 2,
-        text: '<button onclick={this.foo}>',
+        optionId: 2,
+        optionText: '<button onclick={this.foo}>',
         isCorrect: false,
       },
       {
-        _id: 3,
-        text: '<button onClick={this.foo()}>',
+        optionId: 3,
+        optionText: '<button onClick={this.foo()}>',
         isCorrect: false,
       },
       {
-        _id: 4,
-        text: '<button onClick={this.foo}>',
+        optionId: 4,
+        optionText: '<button onClick={this.foo}>',
         isCorrect: true,
       },
     ],

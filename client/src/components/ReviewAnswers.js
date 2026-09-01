@@ -2,9 +2,11 @@ import React from 'react';
 import { Button, Card, Form, Container } from 'react-bootstrap';
 
 const getAnswersClass = (question, userAnswers, answer) => {
+  const selectedAnswers = userAnswers[question._id] || [];
+
   if (answer.isCorrect) {
     return 'bg-success text-white';
-  } else if (userAnswers[question._id].includes(answer._id)) {
+  } else if (selectedAnswers.includes(answer.optionId)) {
     return 'bg-danger text-white';
   } else {
     return 'bg-light';
@@ -13,7 +15,7 @@ const getAnswersClass = (question, userAnswers, answer) => {
 
 const getAnswersMark = (question, userAnswers, answer, selectedAnswers) => {
   if (answer.isCorrect) {
-    if (selectedAnswers.includes(answer._id)) {
+    if (selectedAnswers.includes(answer.optionId)) {
       return (
         <span
           style={{
@@ -55,7 +57,7 @@ const getAnswersMark = (question, userAnswers, answer, selectedAnswers) => {
         </span>
       );
     }
-  } else if (userAnswers[question._id].includes(answer._id)) {
+  } else if (selectedAnswers.includes(answer.optionId)) {
     return (
       <span
         style={{
@@ -102,21 +104,23 @@ const ReviewAnswers = ({
       </p>
       <Form>
         <fieldset disabled>
-          {questions.map(question => (
+          {questions.map((question, index) => (
             <Card key={question._id} className="mb-4">
-              <Card.Header as="h5">{question.text}</Card.Header>
+              <Card.Header as="h5">
+                {index + 1}. {question.questionText}
+              </Card.Header>
               <Card.Body className="bg-white">
                 <Form.Group className="bg-light" key={question._id}>
                   <ul className="list-unstyled">
-                    {question.answers.map(answer => {
-                      const selectedAnswers = userAnswers[question._id];
+                    {question.options.map(answer => {
+                      const selectedAnswers = userAnswers[question._id] || [];
                       return (
                         <li
                           style={{
                             borderBottom: '1px solid white',
                             position: 'relative',
                           }}
-                          key={answer._id}
+                          key={answer.optionId}
                           className={getAnswersClass(
                             question,
                             userAnswers,
@@ -130,7 +134,7 @@ const ReviewAnswers = ({
                             selectedAnswers,
                           )}
                           <label className="review-answers px-2">
-                            {answer.text}
+                            {answer.optionText}
                           </label>
                         </li>
                       );
