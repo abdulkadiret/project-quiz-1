@@ -12,30 +12,33 @@ const dbUri =
     ? process.env.PROD_DB
     : process.env.LOCAL_DB;
 
-mongoose
-  .connect(dbUri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log(`MongoDB connected to ${process.env.NODE_ENV} DB`))
-  .catch(err => {
-    console.error('MongoDB connection error:', err);
-    process.exit(1); // Exit if DB is not connected
-  });
-
-const db = mongoose.connection;
-db.once('connected', () => console.log('MongoDB connected'));
-db.on('error', error => console.error(error));
+if (!dbUri) {
+  console.error(`Missing database URI for ${process.env.NODE_ENV} environment`);
+  process.exit(1);
+}
 
 app.use(morgan('tiny'));
 app.use(express.json());
 app.use('/quizzes', quizRoutes);
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
+  app.use(express.static(path.join(__dirname, 'client', 'build')));
+
   app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
   });
 }
 
-app.listen(PORT, () => console.log(`Server up and running on port ${PORT} !`));
+mongoose
+  .connect(dbUri)
+  .then(() => {
+    console.log(`MongoDB connected to ${process.env.NODE_ENV} DB`);
+
+    app.listen(PORT, '0.0.0.0', () => {
+      console.log(`Server up and running on port ${PORT}`);
+    });
+  })
+  .catch(err => {
+    console.error('MongoDB connection error:', err);
+    process.exit(1);
+  });
