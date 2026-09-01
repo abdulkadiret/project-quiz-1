@@ -6,7 +6,7 @@ const quizzes = require('../data-import/quizzes/quizzes'); // Path to your quiz 
 
 const dbUri =
   process.env.NODE_ENV === 'production'
-    ? process.env.PROD_DB
+    ? process.env.MONGODB_URI
     : process.env.LOCAL_DB;
 
 async function seedDatabase() {
