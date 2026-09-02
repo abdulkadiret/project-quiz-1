@@ -114,7 +114,7 @@ const Quiz = () => {
             question={question}
             index={currentQuestionIndex}
             handleAnswerSelect={handleAnswerSelect}
-            selectedAnswer={userAnswers[questions._id]}
+            selectedAnswer={userAnswers[question._id]}
           />
           <Button
             className="mr-2 mb-4"
