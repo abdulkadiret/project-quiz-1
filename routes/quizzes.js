@@ -42,6 +42,4 @@ router.post('/', async (req, res) => {
   }
 });
 
-Quiz.deleteMany({ text: 'JavaScript Basics' });
-
 module.exports = router;

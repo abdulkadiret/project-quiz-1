@@ -11,10 +11,7 @@ const dbUri =
 
 async function seedDatabase() {
   try {
-    await mongoose.connect(dbUri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(dbUri);
     console.log('Connected to MongoDB');
 
     await Quiz.deleteMany(); // Clear existing quiz questions
@@ -23,7 +20,7 @@ async function seedDatabase() {
     await Quiz.insertMany(quizzes);
     console.log(`Inserted ${quizzes.length} quiz questions`);
 
-    mongoose.disconnect();
+    await mongoose.disconnect();
     console.log('Disconnected from MongoDB');
   } catch (err) {
     console.error('Seeding failed:', err.message);
