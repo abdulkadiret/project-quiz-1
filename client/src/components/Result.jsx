@@ -29,7 +29,7 @@ const Result = ({
         </h2>
       </Container>
 
-      <Button className="mr-2 mb-4" variant="secondary" onClick={onTryAgain}>
+      <Button className="me-2 mb-4" variant="secondary" onClick={onTryAgain}>
         Try again
       </Button>
 

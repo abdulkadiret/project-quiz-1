@@ -22,7 +22,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon
-                  className="mr-2"
+                  className="me-2"
                   aria-hidden="true"
                   icon={faGithub}
                 />
@@ -43,7 +43,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon
-                  className="mr-2"
+                  className="me-2"
                   aria-hidden="true"
                   icon={faLinkedin}
                 />
@@ -58,7 +58,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon
-                  className="mr-2"
+                  className="me-2"
                   aria-hidden="true"
                   icon={faLinkedin}
                 />
@@ -73,7 +73,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon
-                  className="mr-2"
+                  className="me-2"
                   aria-hidden="true"
                   icon={faLinkedin}
                 />

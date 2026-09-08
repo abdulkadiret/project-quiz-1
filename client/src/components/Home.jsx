@@ -12,7 +12,7 @@ const Home = () => {
         <li>
           <Link
             to="/html"
-            className="btn btn-primary mb-2 px-4 font-weight-bold"
+            className="btn btn-primary mb-2 px-4 fw-bold"
           >
             HTML
           </Link>
@@ -20,20 +20,20 @@ const Home = () => {
         <li>
           <Link
             to="/css"
-            className="btn btn-primary mb-2 px-4 font-weight-bold"
+            className="btn btn-primary mb-2 px-4 fw-bold"
           >
             CSS
           </Link>
         </li>
         <li>
-          <Link to="/js" className="btn btn-primary mb-2 px-4 font-weight-bold">
+          <Link to="/js" className="btn btn-primary mb-2 px-4 fw-bold">
             JavaScript
           </Link>
         </li>
         <li>
           <Link
             to="/node"
-            className="btn btn-primary mb-2 px-4 font-weight-bold"
+            className="btn btn-primary mb-2 px-4 fw-bold"
           >
             Node.js
           </Link>
@@ -41,7 +41,7 @@ const Home = () => {
         <li>
           <Link
             to="/react"
-            className="btn btn-primary mb-2 px-4 font-weight-bold"
+            className="btn btn-primary mb-2 px-4 fw-bold"
           >
             React.js
           </Link>

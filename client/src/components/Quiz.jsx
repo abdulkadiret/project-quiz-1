@@ -125,7 +125,7 @@ const Quiz = () => {
             selectedAnswer={userAnswers[question._id]}
           />
           <Button
-            className="mr-2 mb-4"
+            className="me-2 mb-4"
             variant="secondary"
             disabled={currentQuestionIndex === 0}
             onClick={() => setCurrentQuestionIndex(currentQuestionIndex - 1)}
@@ -133,7 +133,7 @@ const Quiz = () => {
             Previous
           </Button>
           <Button
-            className="mr-2 mb-4"
+            className="me-2 mb-4"
             variant="primary"
             disabled={currentQuestionIndex === questions.length - 1}
             onClick={() => setCurrentQuestionIndex(currentQuestionIndex + 1)}
