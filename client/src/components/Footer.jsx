@@ -16,7 +16,7 @@ const Footer = () => {
           <ul className="list-unstyled">
             <li>
               <a
-                className="footer-link text-white"
+                className="footer-link text-white text-decoration-none"
                 href="https://github.com/CodeYourFuture/project-quiz/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -37,7 +37,7 @@ const Footer = () => {
           <ul className="list-unstyled">
             <li>
               <a
-                className="footer-link text-white"
+                className="footer-link text-white text-decoration-none"
                 href="https://www.linkedin.com/in/viktoriia-kosenko-030983168/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -52,7 +52,7 @@ const Footer = () => {
             </li>
             <li>
               <a
-                className="footer-link text-white"
+                className="footer-link text-white text-decoration-none"
                 href="https://www.linkedin.com/in/ahmed8merehil/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -67,7 +67,7 @@ const Footer = () => {
             </li>
             <li>
               <a
-                className="footer-link text-white"
+                className="footer-link text-white text-decoration-none"
                 href="https://www.linkedin.com/in/abdulkadir-awel-23781a1a4/"
                 target="_blank"
                 rel="noopener noreferrer"
