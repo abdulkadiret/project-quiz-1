@@ -1,13 +1,13 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Home from '../components/Home';
 import About from '../components/About';
 import Quiz from '../components/Quiz';
 
 export default () => (
-  <Switch>
-    <Route exact path="/" component={Home} />
-    <Route path="/about" component={About} />
-    <Route path="/:quizName" component={Quiz} />
-  </Switch>
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/:quizName" element={<Quiz />} />
+  </Routes>
 );

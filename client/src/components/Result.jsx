@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ReviewAnswers from './ReviewAnswers';
-import { Button, Jumbotron } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Result = ({
   score,
@@ -21,14 +22,16 @@ const Result = ({
     />
   ) : (
     <div>
-      <Jumbotron>
+      <Container className="py-4 mb-4 bg-light rounded">
         <h2>
           You have got {score} out of {numOfQuestions}.
         </h2>
-      </Jumbotron>
+      </Container>
+
       <Button className="mr-2 mb-4" variant="secondary" href={quizName}>
         Try again
       </Button>
+
       <Button
         className="mb-4"
         variant="primary"

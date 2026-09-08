@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Result from './Result';
 import Question from './Question';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 import { getData } from './retrieveQuizData';
 import { Button, Form, Container } from 'react-bootstrap';
 import Spinner from './Spinner';
