@@ -75,6 +75,13 @@ const Quiz = () => {
     setShouldDisplayScore(true);
   };
 
+  const resetQuiz = () => {
+    setScore(0);
+    setUserAnswers({});
+    setCurrentQuestionIndex(0);
+    setShouldDisplayScore(false);
+  };
+
   const quizDisplayText = {
     html: 'HTML',
     css: 'CSS',
@@ -106,6 +113,7 @@ const Quiz = () => {
           questions={questions}
           userAnswers={userAnswers}
           numOfQuestions={questions.length}
+          onTryAgain={resetQuiz}
         />
       ) : (
         <Form onSubmit={checkUserAnswers}>

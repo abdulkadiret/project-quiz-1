@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import ReviewAnswers from './ReviewAnswers';
 import { Button, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 
 const Result = ({
   score,
@@ -9,6 +8,7 @@ const Result = ({
   userAnswers,
   numOfQuestions,
   questions,
+  onTryAgain
 }) => {
   const [showReview, setShowReview] = useState(false);
 
@@ -19,6 +19,7 @@ const Result = ({
       questions={questions}
       userAnswers={userAnswers}
       numOfQuestions={numOfQuestions}
+      onTryAgain={onTryAgain}
     />
   ) : (
     <div>
@@ -28,7 +29,7 @@ const Result = ({
         </h2>
       </Container>
 
-      <Button className="mr-2 mb-4" variant="secondary" href={quizName}>
+      <Button className="mr-2 mb-4" variant="secondary" onClick={onTryAgain}>
         Try again
       </Button>
 

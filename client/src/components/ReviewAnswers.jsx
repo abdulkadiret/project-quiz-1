@@ -96,6 +96,7 @@ const ReviewAnswers = ({
   quizName,
   userAnswers,
   numOfQuestions,
+  onTryAgain
 }) => {
   return (
     <Container>
@@ -145,7 +146,7 @@ const ReviewAnswers = ({
             </Card>
           ))}
         </fieldset>
-        <Button className="mb-4" variant="primary" href={quizName}>
+        <Button className="mb-4" variant="primary" onClick={onTryAgain}>
           Try again
         </Button>
       </Form>
