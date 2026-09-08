@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "node server.js",
     "server:prod": "env-cmd -f .env.prod node server.js",
-    "client": "npm start --prefix client",
+    "client": "npm run dev --prefix client",
     "dev": "concurrently -n 'server,client' -c 'red,green' \"npm run server\" \"npm run client\"",
     "prod": "concurrently -n 'server,client' -c 'red,green' \"npm run server:prod\" \"npm run client\"",
     "build": "npm install --prefix client --include=dev && npm run build --prefix client",
