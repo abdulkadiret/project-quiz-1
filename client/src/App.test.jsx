@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
+import { expect, test } from 'vitest';
 import Home from './components/Home';
 
 test('renders the quiz home page', () => {

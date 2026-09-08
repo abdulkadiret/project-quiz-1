@@ -1,6 +1,6 @@
-const { defineConfig } = require('vite');
+import { defineConfig } from 'vite';
 
-module.exports = defineConfig({
+export default defineConfig({
   esbuild: {
     jsx: 'transform',
     jsxFactory: 'React.createElement',
@@ -14,5 +14,10 @@ module.exports = defineConfig({
         changeOrigin: true,
       },
     },
+  },
+
+  test: {
+    environment: 'jsdom',
+    setupFiles: ['./src/test/setup.js'],
   },
 });
