@@ -16,14 +16,23 @@ const Header = () => {
       <Navbar.Brand as={Link} to="/" className="ms-3 fw-bold">
         CYF Quiz
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" className="me-3" />
-      <Navbar.Collapse className='me-3'>
+
+      <Navbar.Toggle
+        aria-controls="responsive-navbar-nav"
+        className="me-3"
+      />
+
+      <Navbar.Collapse className="me-3">
         <Nav>
           <Nav.Link as={NavLink} to="/about" className="ms-3">
             About
           </Nav.Link>
+
           <NavDropdown title="Quizzes" className="ms-3">
-            <NavDropdown.Item as={Link} to="/html">
+            <NavDropdown.Item
+              as={NavLink}
+              to="/html"
+            >
               <FontAwesomeIcon
                 className="me-2 text-warning"
                 aria-hidden="true"
@@ -31,8 +40,13 @@ const Header = () => {
               />
               HTML
             </NavDropdown.Item>
+
             <NavDropdown.Divider />
-            <NavDropdown.Item as={Link} to="/css">
+
+            <NavDropdown.Item
+              as={NavLink}
+              to="/css"
+            >
               <FontAwesomeIcon
                 className="me-2 text-warning"
                 aria-hidden="true"
@@ -40,8 +54,13 @@ const Header = () => {
               />
               CSS
             </NavDropdown.Item>
+
             <NavDropdown.Divider />
-            <NavDropdown.Item as={Link} to="/js">
+
+            <NavDropdown.Item
+              as={NavLink}
+              to="/js"
+            >
               <FontAwesomeIcon
                 className="me-2 text-warning"
                 aria-hidden="true"
@@ -49,8 +68,13 @@ const Header = () => {
               />
               JavaScript
             </NavDropdown.Item>
+
             <NavDropdown.Divider />
-            <NavDropdown.Item as={Link} to="/node">
+
+            <NavDropdown.Item
+              as={NavLink}
+              to="/node"
+            >
               <FontAwesomeIcon
                 className="me-2 text-warning"
                 aria-hidden="true"
@@ -58,8 +82,13 @@ const Header = () => {
               />
               Node.js
             </NavDropdown.Item>
+
             <NavDropdown.Divider />
-            <NavDropdown.Item as={Link} to="/react">
+
+            <NavDropdown.Item
+              as={NavLink}
+              to="/react"
+            >
               <FontAwesomeIcon
                 className="me-2 text-warning"
                 aria-hidden="true"
