@@ -83,7 +83,7 @@ const Footer = () => {
           </ul>
         </section>
       </div>
-      <section className="border-top border border-dark-subtle text-center py-2">
+      <section className="border-top border-dark-subtle text-center py-2">
         <p className="mb-0">
           <small>
             Copyright &copy; {`${currentYear()}`}, CYF Scot Quiz Project
