@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -48,6 +48,12 @@ const quizzes = [
 ];
 
 const Home = () => {
+  useEffect(() => {
+    if (window.location.hash === '#quizzes') {
+      document.getElementById('quizzes')?.scrollIntoView();
+    }
+  }, []);
+
   return (
     <main>
       {/* Hero */}
