@@ -14,11 +14,11 @@ const Question = ({
 
   return (
     <fieldset>
-      <Card className="mb-3 rounded">
-        <Card.Header className="bg-secondary text-white" as="h5">
+      <Card className="mb-3 shadow-sm">
+        <Card.Header className="bg-secondary text-white p-3" as="h5">
           {index + 1}. {question.questionText}
         </Card.Header>
-        <Card.Body className="bg-white">
+        <Card.Body className='p-1'>
           <Form.Group className="bg-light px-1" key={question._id}>
             {question.options.map(option => (
               <div
@@ -29,7 +29,7 @@ const Question = ({
               >
                 <Form.Check
                   type={question.questionType}
-                  className={addClassName(question)}
+                  className={`${addClassName(question)} py-3`}
                   id={`${question._id}.${option.optionId}`}
                   name={question._id}
                   value={option.optionId}

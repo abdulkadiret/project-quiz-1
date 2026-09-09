@@ -105,7 +105,7 @@ const Quiz = () => {
 
   return (
     <Container>
-      <h1>{quizDisplayText[quizName]} Quiz</h1>
+      <h1 className='fw-bold my-4'>{quizDisplayText[quizName]} Quiz</h1>
       {shouldDisplayScore ? (
         <Result
           score={score}
@@ -125,23 +125,23 @@ const Quiz = () => {
             selectedAnswer={userAnswers[question._id]}
           />
           <Button
-            className="me-2 mb-4"
-            variant="secondary"
+            className="me-2 mb-4 px-4 fw-bold shadow-sm"
+            variant="outline-secondary"
             disabled={currentQuestionIndex === 0}
             onClick={() => setCurrentQuestionIndex(currentQuestionIndex - 1)}
           >
             Previous
           </Button>
           <Button
-            className="me-2 mb-4"
-            variant="primary"
+            className="me-2 mb-4 px-4 fw-bold shadow-sm"
+            variant="outline-primary"
             disabled={currentQuestionIndex === questions.length - 1}
             onClick={() => setCurrentQuestionIndex(currentQuestionIndex + 1)}
           >
             Next
           </Button>
           {Object.keys(userAnswers).length === questions.length && (
-            <Button className="mb-4" variant="primary" type="submit">
+            <Button className="me-2 mb-4 px-4 fw-bold shadow-sm" variant="outline-success" type="submit">
               Submit
             </Button>
           )}
