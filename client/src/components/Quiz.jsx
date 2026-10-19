@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { getData } from './retrieveQuizData';
 import { Button, Form, Container } from 'react-bootstrap';
 import Spinner from './Spinner';
+import shuffleQuiz from '../../../helpers/shuffleQuiz';
 
 const Quiz = () => {
   const { quizName } = useParams();
@@ -76,6 +77,7 @@ const Quiz = () => {
   };
 
   const resetQuiz = () => {
+    setQuestions(prev => shuffleQuiz(prev));
     setScore(0);
     setUserAnswers({});
     setCurrentQuestionIndex(0);
