@@ -17,7 +17,7 @@
   },
   "rewrites": [
     {
-      "source": "/quizzes/:path",
+      "source": "/quizzes/:path*",
       "destination": {
         "service": "backend"
       }
