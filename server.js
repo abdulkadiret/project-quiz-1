@@ -64,7 +64,7 @@ app.use('/quizzes', quizRoutes);
 // Serve the frontend when running locally in production mode.
 // Vercel can serve the frontend separately if configured to do so.
 if (isProduction && !process.env.VERCEL) {
-  app.use(express.static(path.join(__dirname, 'public')));
+  app.use(express.static(path.join(__dirname, 'client/dist')));
 
   app.get('*', (req, res, next) => {
     //Don't send the frontend for unknown API routes
@@ -73,7 +73,7 @@ if (isProduction && !process.env.VERCEL) {
     }
 
     res.sendFile(
-      path.join(__dirname, 'public', 'index.html')
+      path.join(__dirname, 'client/dist', 'index.html')
     );
   });
 }
