@@ -9,10 +9,11 @@ const quizRoutes = require('./routes/quizzes');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-const dbUri =
-  process.env.NODE_ENV === 'production'
-    ? process.env.MONGODB_URI
-    : process.env.LOCAL_DB;
+const isProduction = process.env.NODE_ENV === 'production';
+
+const dbUri = isProduction
+  ? process.env.MONGODB_URI
+  : process.env.LOCAL_DB;
 
 let connectionPromise;
 
@@ -23,14 +24,16 @@ async function connectToDatabase() {
 
   if (!dbUri) {
     throw new Error(
-      `Missing database URI for ${process.env.NODE_ENV} environment`,
+      `Missing database URI for ${
+        process.env.NODE_ENV || 'development'
+      } environment`
     );
   }
 
   if (!connectionPromise) {
-    connectionPromise = mongoose.connect(dbUri).catch(err => {
+    connectionPromise = mongoose.connect(dbUri).catch(error => {
       connectionPromise = null;
-      throw err;
+      throw error;
     });
   }
 
@@ -40,35 +43,47 @@ async function connectToDatabase() {
 app.use(morgan('tiny'));
 app.use(express.json());
 
-//connect before quiz routes handle requests
+// Health check
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
+
+// Connect to MongoDB before processing quiz requests
 app.use('/quizzes', async (req, res, next) => {
   try {
     await connectToDatabase();
     next();
-  } catch (err) {
-    console.error('MongoDB connection error:', err);
+  } catch (error) {
+    console.error('MongoDB connection error:', error.message);
     res.status(500).json({ error: 'Database connection error' });
   }
 });
 
 app.use('/quizzes', quizRoutes);
 
-// Keep serving the build frontend when running locally in production mode.
-// Vercel serves static assets separately.
-if (process.env.NODE_ENV === 'production' && !process.env.VERCEL) {
-  app.use(express.static(path.join(__dirname, 'client', 'dist')));
+// Serve the frontend when running locally in production mode.
+// Vercel can serve the frontend separately if configured to do so.
+if (isProduction && !process.env.VERCEL) {
+  app.use(express.static(path.join(__dirname, 'public')));
 
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+  app.get('*', (req, res, next) => {
+    //Don't send the frontend for unknown API routes
+    if (req.path.startsWith('/quizzes') || req.path === '/health') {
+      return next();
+    }
+
+    res.sendFile(
+      path.join(__dirname, 'public', 'index.html')
+    );
   });
 }
 
-// Vercel imports this Express application
+// Export the Express app for Vercel
 module.exports = app;
 
-// Start a regular server for local development only.
+// Start a local HTTP server only when running this file directly
 if (require.main === module) {
   app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server up and running on port ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
   });
 }

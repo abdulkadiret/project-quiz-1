@@ -11,7 +11,7 @@
     "dev": "concurrently -n 'server,client' -c 'red,green' \"npm run server\" \"npm run client\"",
     "prod": "concurrently -n 'server,client' -c 'red,green' \"npm run server:prod\" \"npm run client\"",
     "build": "npm install --prefix client --include=dev && npm run build --prefix client",
-    "seed": "NODE_ENV=production node scripts/seed.js"
+    "seed": "node scripts/seed.js"
   },
   "repository": {
     "type": "git",

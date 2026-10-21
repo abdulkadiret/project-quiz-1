@@ -13,35 +13,35 @@ const quizzes = [
   {
     name: 'HTML',
     description: 'Test your HTML knowledge',
-    path: '/html',
+    path: '/quiz/html',
     icon: faHtml5,
     color: 'text-danger',
   },
   {
     name: 'CSS',
     description: 'Test your CSS knowledge',
-    path: '/css',
+    path: '/quiz/css',
     icon: faCss3,
     color: 'text-primary',
   },
   {
     name: 'JavaScript',
     description: 'Test your JavaScript knowledge',
-    path: '/js',
+    path: '/quiz/js',
     icon: faJs,
     color: 'text-warning',
   },
   {
     name: 'Node.js',
     description: 'Test your Node.js knowledge',
-    path: '/node',
+    path: '/quiz/node',
     icon: faNodeJs,
     color: 'text-success',
   },
   {
     name: 'React.js',
     description: 'Test your React knowledge',
-    path: '/react',
+    path: '/quiz/react',
     icon: faReact,
     color: 'text-info',
   },
@@ -59,13 +59,9 @@ const Home = () => {
       {/* Hero */}
       <section className="bg-light py-5">
         <div className="container text-center py-4">
-          <h1 className="display-4 fw-bold text-primary mb-3">
-            CYF Quiz
-          </h1>
+          <h1 className="display-4 fw-bold text-primary mb-3">CYF Quiz</h1>
 
-          <p className="lead fw-semibold mb-2">
-            Hello, Coder! 👋
-          </p>
+          <p className="lead fw-semibold mb-2">Hello, Coder! 👋</p>
 
           <h2 className="h3 fw-bold mb-3">
             Ready to test your coding knowledge?
@@ -75,8 +71,8 @@ const Home = () => {
             className="lead text-body-secondary mb-4 mx-auto"
             style={{ maxWidth: '650px' }}
           >
-            Choose a topic, take a quiz, and review your answers
-            when you're done.
+            Choose a topic, take a quiz, and review your answers when you're
+            done.
           </p>
 
           <a
@@ -99,11 +95,8 @@ const Home = () => {
           </div>
 
           <div className="row g-4 justify-content-center">
-            {quizzes.map((quiz) => (
-              <div
-                className="col-12 col-sm-6 col-lg-4"
-                key={quiz.name}
-              >
+            {quizzes.map(quiz => (
+              <div className="col-12 col-sm-6 col-lg-4" key={quiz.name}>
                 <div className="card h-100 border border-light-subtle shadow-sm bg-light">
                   <div className="card-body text-center p-4">
                     <FontAwesomeIcon

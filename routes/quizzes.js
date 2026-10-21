@@ -2,13 +2,13 @@ const express = require('express');
 const router = express.Router();
 const Quiz = require('../models/quiz');
 
-//Getting all questions
+ // Getting all questions, optionally filtered by category
 router.get('/', async (req, res) => {
   const { category } = req.query;
-  console.log('[GET /quizzes] Query category:', category);
 
   try {
-    const quizQuestions = await Quiz.find({ category });
+    const filter = category ? { category } : {};
+    const quizQuestions = await Quiz.find(filter);
     res.status(200).json(quizQuestions);
   } catch (error) {
     res.status(500).json({ message: error.message });
