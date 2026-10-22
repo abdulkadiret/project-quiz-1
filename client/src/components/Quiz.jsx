@@ -24,7 +24,7 @@ const Quiz = () => {
 
     getData(quizName)
       .then(res => {
-        setQuestions(res || []);
+        setQuestions(shuffleQuiz(res));
       })
       .catch(err => {
         console.error('Failed to fetch quiz data:', err);
@@ -107,7 +107,7 @@ const Quiz = () => {
 
   return (
     <Container>
-      <h1 className='fw-bold my-4'>{quizDisplayText[quizName]} Quiz</h1>
+      <h1 className="fw-bold my-4">{quizDisplayText[quizName]} Quiz</h1>
       {shouldDisplayScore ? (
         <Result
           score={score}
@@ -143,7 +143,11 @@ const Quiz = () => {
             Next
           </Button>
           {Object.keys(userAnswers).length === questions.length && (
-            <Button className="me-2 mb-4 px-4 fw-bold shadow-sm" variant="outline-success" type="submit">
+            <Button
+              className="me-2 mb-4 px-4 fw-bold shadow-sm"
+              variant="outline-success"
+              type="submit"
+            >
               Submit
             </Button>
           )}
