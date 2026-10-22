@@ -35,32 +35,46 @@ const Quiz = () => {
       });
   }, [quizName]);
 
-  const handleCheckboxAnswers = (questionId, answerId) => {
-    const previousSelectedAnswers = userAnswers[questionId] || [];
-
-    const newCheckboxAnswer = previousSelectedAnswers.includes(answerId)
-      ? previousSelectedAnswers.filter(answer => answer !== answerId)
-      : [...previousSelectedAnswers, answerId];
-
-    return {
-      [questionId]: newCheckboxAnswer,
-    };
-  };
-
   const handleAnswerSelect = (e, type) => {
-    const questionId = e.target.name; // Uses question._id
+    const questionId = e.target.name;
     const answerId = Number(e.target.value);
 
-    const selectedAnswer =
-      type === 'checkbox'
-        ? handleCheckboxAnswers(questionId, answerId)
-        : { [questionId]: [answerId] };
+    setUserAnswers(prev => {
+      const previousAnswers = prev[questionId] || [];
 
-    setUserAnswers(prev => ({ ...prev, ...selectedAnswer }));
+      let selectedAnswers;
+
+      if (type === 'checkbox') {
+        selectedAnswers = previousAnswers.includes(answerId)
+          ? previousAnswers.filter(id => id !== answerId)
+          : [...previousAnswers, answerId];
+      } else {
+        selectedAnswers = [answerId];
+      }
+
+      // Remove the question if no answer is selected
+      if (selectedAnswers.length === 0) {
+        const updatedAnswers = { ...prev };
+        delete updatedAnswers[questionId];
+        return updatedAnswers;
+      }
+
+      return {
+        ...prev,
+        [questionId]: selectedAnswers,
+      };
+    });
   };
 
   const checkUserAnswers = e => {
     e.preventDefault();
+
+    if (
+      questions.some(question => (userAnswers[question._id] || []).length === 0)
+    ) {
+      return;
+    }
+
     const totalScore = questions.reduce((point, question) => {
       const selectedAnswers = userAnswers[question._id] || [];
 
@@ -142,15 +156,18 @@ const Quiz = () => {
           >
             Next
           </Button>
-          {Object.keys(userAnswers).length === questions.length && (
-            <Button
-              className="me-2 mb-4 px-4 fw-bold shadow-sm"
-              variant="outline-success"
-              type="submit"
-            >
-              Submit
-            </Button>
-          )}
+          {questions.length > 0 &&
+            questions.every(
+              question => (userAnswers[question._id] || []).length > 0,
+            ) && (
+              <Button
+                className="me-2 mb-4 px-4 fw-bold shadow-sm"
+                variant="outline-success"
+                type="submit"
+              >
+                Submit
+              </Button>
+            )}
         </Form>
       )}
     </Container>
